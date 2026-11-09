@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Flatley | Greater Phoenix Home Valuation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --navy-primary: #102E55;
+            --navy-secondary: #173B68;
+            --gold: #EBAF43;
+            --cream: #FFF5E8;
+            --sandstone: #D5B68A;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --font-script: 'Allura', cursive;
+        }
+        html, body { width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; overflow-x: hidden !important; }
+        * { box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: #FAFAFA; line-height: 1.6; }
+        h1, h2, h3 { font-family: var(--font-heading); }
+        .script-text { font-family: var(--font-script); color: var(--gold); font-size: 1.4em; }
+
+        .btn-gold { background-color: var(--gold); color: var(--navy-primary); font-weight: 700; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; width: 100%; }
+        .btn-gold:hover { background-color: #d99e32; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(235, 175, 67, 0.4); }
+
+        .hero { position: relative; background: linear-gradient(180deg, rgba(16,46,85,0.75) 0%, rgba(16,46,85,0.55) 100%), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; padding: 80px 40px; color: var(--white); min-height: 700px; display: flex; align-items: center; width: 100%; }
+        .hero-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr 440px; gap: 40px; align-items: center; width: 100%; }
+        .portrait-card { text-align: center; }
+        .portrait-img { width: 240px; height: 320px; object-fit: cover; object-position: top center; border-radius: 12px; border: 3px solid var(--gold); box-shadow: 0 12px 28px rgba(0,0,0,0.4); }
+        .hero-text h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 15px; }
+        .hero-subtitle { font-size: 1.15rem; opacity: 0.95; margin-bottom: 25px; }
+        .benefits-list { display: flex; gap: 25px; margin-top: 20px; }
+        .benefit-item { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; }
+        .benefit-item i { color: var(--gold); }
+
+        .valuation-card { background-color: var(--white); color: var(--text-dark); padding: 35px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.25); border-top: 5px solid var(--gold); }
+        .valuation-card h3 { color: var(--navy-primary); font-size: 1.6rem; margin-bottom: 5px; }
+        .valuation-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-group.full { grid-column: span 2; }
+        .form-control { width: 100%; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; }
+        .form-control:focus { outline: 2px solid var(--gold); border-color: transparent; }
+        .privacy-note { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px; }
+
+        .intro-section { background-color: var(--cream); padding: 90px 40px; width: 100%; }
+        .intro-container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .intro-left h2 { color: var(--navy-primary); font-size: 2.5rem; margin-bottom: 15px; }
+        .brian-signature { font-family: var(--font-script); font-size: 3.5rem; color: var(--navy-primary); margin-top: 20px; display: block; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .feature-item { text-align: center; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .icon-circle { width: 70px; height: 70px; background-color: var(--navy-primary); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.6rem; box-shadow: 0 4px 10px rgba(16,46,85,0.2); }
+
+        .expertise-section { background: linear-gradient(rgba(16,46,85,0.88), rgba(16,46,85,0.88)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color: var(--white); padding: 90px 40px; width: 100%; }
+        .expertise-container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .location-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0; }
+        .location-btn { background: rgba(255,255,255,0.1); border: 1px solid var(--gold); color: var(--white); padding: 14px 20px; border-radius: 8px; cursor: pointer; font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; width: 100%; text-align: left; }
+        .location-btn:hover { background: var(--gold); color: var(--navy-primary); transform: translateX(5px); }
+        .location-btn i { color: var(--gold); }
+        .location-btn:hover i { color: var(--navy-primary); }
+
+        .communities-section { padding: 90px 40px; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { color: var(--navy-primary); font-size: 2.5rem; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+        .community-card { position: relative; border-radius: 12px; overflow: hidden; height: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); cursor: pointer; }
+        .community-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .community-card:hover img { transform: scale(1.08); }
+        .card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(16,46,85,0.9) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; color: var(--white); }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(16,46,85,0.85); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: var(--white); border-radius: 12px; max-width: 850px; width: 100%; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: relative; max-height: 90vh; display: flex; flex-direction: column; }
+        .modal-header { background: var(--navy-primary); color: var(--white); padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { font-size: 1.4rem; color: var(--gold); }
+        .close-modal { background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+        .modal-body { padding: 25px; overflow-y: auto; }
+        .map-iframe { width: 100%; height: 350px; border: 0; border-radius: 8px; margin-bottom: 20px; }
+        .landmarks-title { font-weight: 700; color: var(--navy-primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .landmark-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .landmark-tag { background: var(--cream); color: var(--navy-primary); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid var(--sandstone); }
+
+        footer { background-color: var(--navy-primary); color: var(--white); padding: 60px 40px 30px; text-align: center; width: 100%; }
+        .footer-logo { font-family: var(--font-heading); font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+        .social-icons { display: flex; justify-content: center; gap: 25px; margin: 25px 0; }
+        .social-icons a { color: var(--white); font-size: 1.4rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: var(--gold); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; font-size: 0.85rem; color: var(--sandstone); }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .portrait-img { margin: 0 auto; }
+            .benefits-list { justify-content: center; }
+            .intro-container, .expertise-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="portrait-card">
+                <img src="https://lh3.googleusercontent.com/d/1Avys2T6RNf1SoUpYWgnCIoll4Jv33fyE" alt="Brian Flatley Real Estate Agent" class="portrait-img">
+            </div>
+
+            <div class="hero-text">
+                <h1>What's Your <span class="script-text">Arizona</span> Home Worth?</h1>
+                <p class="hero-subtitle">Discover what your property could sell for in today's Greater Phoenix real estate market.</p>
+                <div class="benefits-list">
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> No Obligation</div>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> 100% Free</div>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> Quick &amp; Easy</div>
+                </div>
+            </div>
+
+            <div class="valuation-card">
+                <h3>Get Your Free Home Valuation</h3>
+                <p>Complete the form below and I'll review your property details.</p>
+                <form id="valuationForm">
+                    <div class="form-grid">
+                        <div class="form-group full"><input type="text" id="fullName" class="form-control" placeholder="Full Name *" required></div>
+                        <div class="form-group full"><input type="email" id="email" class="form-control" placeholder="Email Address *" required></div>
+                        <div class="form-group full"><input type="tel" id="phone" class="form-control" placeholder="Phone Number *" required></div>
+                        <div class="form-group full"><input type="text" id="address" class="form-control" placeholder="Property Address *" required></div>
+                        <div class="form-group"><input type="text" id="city" class="form-control" placeholder="City" value="Chandler"></div>
+                        <div class="form-group"><input type="text" id="zip" class="form-control" placeholder="ZIP Code"></div>
+                    </div>
+                    <button type="submit" class="btn-gold" style="margin-top: 15px;" id="submitBtn">Get My Free Valuation</button>
+                    <p class="privacy-note"><i class="fas fa-lock"></i> Your information is secure and private.</p>
+                </form>
+                <div id="formResponse" style="display:none; margin-top:15px; font-weight:bold; color:green; text-align:center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <div class="intro-left">
+                <h2>Let's Talk About Your Arizona Home</h2>
+                <p>Whether you're thinking of selling or just curious about your home's current market value, I'm here to provide straightforward, expert guidance.</p>
+                <span class="brian-signature">Brian Flatley</span>
+                <p style="font-size: 1rem; color: var(--navy-secondary); font-weight:600;">Real Estate Expert | eXp Realty</p>
+            </div>
+            <div class="intro-right">
+                <h3 style="color: var(--navy-primary); margin-bottom: 25px; text-align: center; font-size: 2rem;">Why Work With Brian?</h3>
+                <div class="features-grid">
+                    <div class="feature-item"><div class="icon-circle"><i class="fas fa-map-marked-alt"></i></div><h4>Local Expertise</h4></div>
+                    <div class="feature-item"><div class="icon-circle"><i class="fas fa-city"></i></div><h4>Greater Phoenix</h4></div>
+                    <div class="feature-item"><div class="icon-circle"><i class="fas fa-user-shield"></i></div><h4>Personalized Service</h4></div>
+                    <div class="feature-item"><div class="icon-circle"><i class="fas fa-chart-line"></i></div><h4>Proven Results</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Greater Phoenix Section -->
+    <section class="expertise-section">
+        <div class="expertise-container">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Greater Phoenix Real Estate Expertise</h2>
+                <p style="margin-bottom: 25px; opacity: 0.9; font-size: 1.1rem;">Click on any community below to view the interactive map and notable area landmarks.</p>
+                <a href="https://brianflatley.exprealty.com/" target="_blank" class="btn-gold" style="display:inline-block; width:auto; text-decoration:none;">Explore All Properties</a>
+            </div>
+            <div>
+                <ul class="location-list">
+                    <li><button class="location-btn" onclick="openMapModal('Phoenix')"><i class="fas fa-map-marker-alt"></i> Phoenix</button></li>
+                    <li><button class="location-btn" onclick="openMapModal('Scottsdale')"><i class="fas fa-map-marker-alt"></i> Scottsdale</button></li>
+                    <li><button class="location-btn" onclick="openMapModal('Chandler')"><i class="fas fa-map-marker-alt"></i> Chandler</button></li>
+                    <li><button class="location-btn" onclick="openMapModal('Gilbert')"><i class="fas fa-map-marker-alt"></i> Gilbert</button></li>
+                    <li><button class="location-btn" onclick="openMapModal('Mesa')"><i class="fas fa-map-marker-alt"></i> Mesa</button></li>
+                    <li><button class="location-btn" onclick="openMapModal('Greater Phoenix')"><i class="fas fa-compass"></i> Surrounding Areas</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Cards Section -->
+    <section class="communities-section">
+        <div class="section-header"><h2>Explore Featured Communities</h2></div>
+        <div class="cards-grid">
+            <div class="community-card" onclick="openMapModal('Phoenix')">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="Phoenix Real Estate">
+                <div class="card-overlay"><h3>Phoenix</h3><p style="font-size:0.85rem;">Click to explore map &amp; landmarks</p></div>
+            </div>
+            <div class="community-card" onclick="openMapModal('Scottsdale')">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Scottsdale Luxury Homes">
+                <div class="card-overlay"><h3>Scottsdale</h3><p style="font-size:0.85rem;">Click to explore map &amp; landmarks</p></div>
+            </div>
+            <div class="community-card" onclick="openMapModal('Chandler')">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" alt="Chandler Real Estate">
+                <div class="card-overlay"><h3>Chandler</h3><p style="font-size:0.85rem;">Click to explore map &amp; landmarks</p></div>
+            </div>
+            <div class="community-card" onclick="openMapModal('Gilbert')">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Gilbert Heritage District">
+                <div class="card-overlay"><h3>Gilbert</h3><p style="font-size:0.85rem;">Click to explore map &amp; landmarks</p></div>
+            </div>
+            <div class="community-card" onclick="openMapModal('Mesa')">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Mesa Real Estate">
+                <div class="card-overlay"><h3>Mesa</h3><p style="font-size:0.85rem;">Click to explore map &amp; landmarks</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Landmarks Modal -->
+    <div class="modal" id="mapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Community Map &amp; Landmarks</h3>
+                <button class="close-modal" onclick="closeMapModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="mapFrame" class="map-iframe" src="" loading="lazy"></iframe>
+                <div class="landmarks-title"><i class="fas fa-star" style="color:var(--gold);"></i> Notable Landmarks &amp; Attractions</div>
+                <div class="landmark-tags" id="landmarkTags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">BRIAN FLATLEY</div>
+        <p>Your Trusted Real Estate Partner in Greater Phoenix, Arizona</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Brian Flatley Real Estate | eXp Realty. Equal Housing Opportunity.</div>
+    </footer>
+
+    <script>
+        const APPS_SCRIPT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzJDAtTFYDUwfyWxXZ37w0pUHU30lIgXi5fyw1vRvpok-4cdYW-KijtpahNg0bZYmS6/exec";
+
+        const cityData = {
+            "Phoenix": { mapUrl: "https://maps.google.com/maps?q=Phoenix,AZ&t=&z=11&ie=UTF8&iwloc=&output=embed", landmarks: ["Camelback Mountain", "Papago Park", "Desert Botanical Garden", "South Mountain Preserve", "Downtown Phoenix Arts District"] },
+            "Scottsdale": { mapUrl: "https://maps.google.com/maps?q=Scottsdale,AZ&t=&z=11&ie=UTF8&iwloc=&output=embed", landmarks: ["Old Town Scottsdale", "McDowell Sonoran Preserve", "Taliesin West", "Scottsdale Fashion Square", "Pinnacle Peak"] },
+            "Chandler": { mapUrl: "https://maps.google.com/maps?q=Chandler,AZ&t=&z=12&ie=UTF8&iwloc=&output=embed", landmarks: ["Historic Downtown Chandler", "Ocotillo Golf Club", "Chandler Fashion Center", "Tumbleweed Park", "Veterans Oasis Park"] },
+            "Gilbert": { mapUrl: "https://maps.google.com/maps?q=Gilbert,AZ&t=&z=12&ie=UTF8&iwloc=&output=embed", landmarks: ["Gilbert Heritage District", "Riparian Preserve at Water Ranch", "Agritopia", "SanTan Village", "Gilbert Regional Park"] },
+            "Mesa": { mapUrl: "https://maps.google.com/maps?q=Mesa,AZ&t=&z=11&ie=UTF8&iwloc=&output=embed", landmarks: ["Superstition Mountains", "Mesa Arts Center", "Usery Mountain Regional Park", "Saguaro Lake", "Mesa Amphitheatre"] },
+            "Greater Phoenix": { mapUrl: "https://maps.google.com/maps?q=Phoenix+Metropolitan+Area&t=&z=9&ie=UTF8&iwloc=&output=embed", landmarks: ["Phoenix", "Scottsdale", "Chandler", "Gilbert", "Mesa", "Tempe", "Ahwatukee", "Paradise Valley"] }
+        };
+
+        function openMapModal(cityName) {
+            const data = cityData[cityName] || cityData["Greater Phoenix"];
+            document.getElementById('modalTitle').innerText = cityName + " - Community Map & Highlights";
+            document.getElementById('mapFrame').src = data.mapUrl;
+            document.getElementById('landmarkTags').innerHTML = data.landmarks.map(item => `<span class="landmark-tag"><i class="fas fa-location-dot" style="color:var(--gold);"></i> ${item}</span>`).join('');
+            document.getElementById('mapModal').style.display = 'flex';
+        }
+
+        function closeMapModal() {
+            document.getElementById('mapModal').style.display = 'none';
+            document.getElementById('mapFrame').src = '';
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('mapModal')) closeMapModal();
+        };
+
+        document.getElementById('valuationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const responseDiv = document.getElementById('formResponse');
+
+            submitBtn.innerText = "Submitting...";
+            submitBtn.disabled = true;
+
+            const formData = {
+                action: "submitValuation",
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                zip: document.getElementById('zip').value
+            };
+
+            fetch(APPS_SCRIPT_ENDPOINT, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(formData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                submitBtn.innerText = "Get My Free Valuation";
+                submitBtn.disabled = false;
+                responseDiv.style.display = "block";
+                if (data.status === "success") {
+                    responseDiv.style.color = "green";
+                    responseDiv.innerText = "Thank you! Your valuation request has been submitted.";
+                    document.getElementById('valuationForm').reset();
+                } else {
+                    responseDiv.style.color = "red";
+                    responseDiv.innerText = "Submission error: " + (data.message || "Please try again.");
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                submitBtn.innerText = "Get My Free Valuation";
+                submitBtn.disabled = false;
+                responseDiv.style.display = "block";
+                responseDiv.style.color = "red";
+                responseDiv.innerText = "Something went wrong. Please try again or call Brian directly.";
+            });
+        });
+    </script>
+</body>
+</html>
